@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+int main() {
+    int n;
+    printf("Enter size of array\n: ");
+    scanf("%d", &n);
+    int *A = (int*)calloc(n,sizeof(int)); //dynamically allocated array
+    for(int i=0; i<n; i++){
+        A[i] = i+1;
+    }
+    
+    int *B = (int*)realloc(A, 2*n*sizeof(int));
+    
+    //equivalent to malloc
+    //int *B = (int*)realloc(NULL, 2*n*sizeof(int));
+    
+    //equivalent to calloc
+    //int *B = (int*)realloc(A,0);
+    
+    printf("Previous block address = %d, new address = %d\n", A, B);
+    
+    for(int i=0; i<n; i++){
+        printf("%d ", B[i]); 
+    }
+}
