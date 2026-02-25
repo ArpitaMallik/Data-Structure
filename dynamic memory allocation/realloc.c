@@ -15,7 +15,7 @@ int main() {
     //equivalent to malloc
     //int *B = (int*)realloc(NULL, 2*n*sizeof(int));
     
-    //equivalent to calloc
+    //equivalent to free(A)
     //int *B = (int*)realloc(A,0);
     
     printf("Previous block address = %d, new address = %d\n", A, B);
